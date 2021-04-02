@@ -20,6 +20,6 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: Build
-        run: ./gradlew assemble
-      - name: Publish library
-        run: ./gradlew spid:publish -PGITHUB_USER=${{ secrets.GITHUB_USER }} -PGITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+        run: ./gradlew assembleRelease
+      - name: Unit test library
+        run: ./gradlew testReleaseUnitTest
